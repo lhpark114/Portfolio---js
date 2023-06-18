@@ -4,32 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HyunAh's Portfolio</title>
+    <!-- SEO -->
+    <title>HyunAh&#39;s Portfolio</title>
     <meta name="description" content="Portfolio for HyunAh 🧵🪡👩🏻‍💻" />
     <meta name="author" content="HyunAh 🧵🪡👩🏻‍💻" />
-    <link rel="icon" type="image/png" href="imgs/logo-removebg.png"/>
-    <script
-      src="https://kit.fontawesome.com/dde5490d2b.js"
-      crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="imgs/favicon.png"/>
+
+    <!-- Open Graph Data -->
+    <meta property="og:title" content="Hyun-Ah's Portfolio"/>
+    <meta property="og:type" content="Website"/>
+    <meta property="og:url" content="TBD URL"/>
+    <meta property="og:image" content="TBD image"/>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css"/>
-    <script src="main.js" defer></script>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/dde5490d2b.js"
+      crossorigin="anonymous">
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!-- Javascript -->
+    <script src="src/main.js" defer></script>
   </head>
+
   <body>
-    <button class="page-up">    
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+    <!-- Header -->
+    <header>
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbar__logo">
-            <img class="navbar__logo__img" src="./imgs/logo-removebg.png" alt="logo" />
-            <a href="#">Strawberry</a>
+            <img class="navbar__logo__img" src="./imgs/favicon.png" alt="logo" />
+            <h1><a href="#">Strawberry</a></h1>
         </div>
+        <nav>
         <ul class="navbar__menu">
             <li class="navbar__menu__item active" data-scroll="#home">Home</li>
             <li class="navbar__menu__item" data-scroll="#about">About</li>
@@ -38,11 +53,27 @@
             <li class="navbar__menu__item" data-scroll="#testimonials">Testimonial</li>
             <li class="navbar__menu__item" data-scroll="#contact">Contact</li>
         </ul>
+
+        <!-- <ul class="navbar__menu">
+            <li <a href="#home">Home</a></li>
+            <li <a href="#about">About</a><</li>
+            <li <a href="#skills">Skills</a><</li>
+            <li <a href="#work">My work</a><</li>
+            <li <a href="#testimonials">Testimonial</a><</li>
+            <li <a href="#contact">Contact</a><</li>
+        </ul> -->
+        </nav>
+        
         <!-- Toggle Button -->
         <button class="navbar__toggle-btn">
             <i class="fa-solid fa-bars"></i>
         </button>
     </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+
     <!-- Home -->
     <Section id="home">
         <div class="home__container">
@@ -50,11 +81,24 @@
             src="./imgs/Profile.jpg"
             alt="Hyun-Ah's profile photo"
             class="home__avatar"/>
-            <h1 class="home__title">Hello, <br/>I'm YumYum</h1>
-            <h2 class="home__description">Fashion to Front End Developer</h2>
-            <button class="home__contact">CONTACT ME</button>
+            <h2 class="home__title">Hello, <br/>I&#39;m YumYum</h2>
+            <p class="home__description">Fashion to Front End Developer</p>
+            <a href=#contact>CONTACT ME</a>
         </div>
     </Section>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <!-- Arrow Up -->
+    <aside>
+        <button class="page-up">    
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </aside>
+
+
     <!-- About Me -->
     <section id="about" class="section section__container">
         <h1>About me</h1>
