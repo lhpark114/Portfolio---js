@@ -44,7 +44,7 @@
             <img class="header__logo__img" src="./imgs/favicon.png" alt="logo" />
             <h1 lass="header__logo__title"><a href="#">Strawberry</a></h1>
         </div>
-        <nav>
+        <nav class="header__nav">
         <ul class="navbar__menu">
             <li class="navbar__menu__item active" data-scroll="#home">Home</li>
             <li class="navbar__menu__item" data-scroll="#about">About</li>
@@ -176,60 +176,60 @@
                         <div class="skill_description">
                             <span>HTML</span>
                             <span>99%</span>
+                        </div>
                             <div class="skill__bar">
                                 <div class="skill__value" style="width:99%"></div>
                             </div>
-                        </div>
                     </li>
 
                     <li class="skill">
                         <div class="skill_description">
                             <span>CSS</span>
                             <span>99%</span>
+                        </div>
                             <div class="skill__bar">
                                 <div class="skill__value" style="width:99%"></div>
                             </div>
-                        </div>
                     </li>
 
                     <li class="skill">
                         <div class="skill_description">
                             <span>JAVASCRIPT</span>
                             <span>95%</span>
+                        </div>
                             <div class="skill__bar">
                                 <div class="skill__value" style="width:95%"></div>
                             </div>
-                        </div>
                     </li>
 
                     <li class="skill">
                         <div class="skill_description">
                             <span>REACT</span>
                             <span>90%</span>
+                        </div>
                             <div class="skill__bar">
                                 <div class="skill__value" style="width:90%"></div>
                             </div>
-                        </div>
                     </li>
 
                     <li class="skill">
                         <div class="skill_description">
                             <span>TYPESCRIPT</span>
                             <span>85%</span>
+                        </div>
                             <div class="skill__bar">
                                 <div class="skill__value" style="width:85%"></div>
                             </div>
-                        </div>
                     </li>
 
                     <li class="skill">
                         <div class="skill_description">
                             <span>NEXT.JS</span>
                             <span>80%</span>
+                        </div>
                             <div class="skill__bar">
                                 <div class="skill__value" style="width:80%"></div>
                             </div>
-                        </div>
                     </li>
                 </ul>
             </section>
@@ -259,67 +259,63 @@
             <h2 class="title">My work</h2>
             <p class="description">Projects</p>
             <ul class="work__categories">
-                <li><button class="category__btn selected" data-filter="*">All<span class="category__count">4</span></button></li>
+                <li><button class="category__btn--selected" data-filter="*">All<span class="category__count">4</span></button></li>
                 <li><button class="category__btn" data-filter="JS">JavaScript<span class="category__count">2</span></button></li>
                 <li><button class="category__btn" data-filter="React">React<span class="category__count">2</span></button></li>
             </ul>
 
             <ul class="work__projects">
-                <li>
+                <li class="work__project">
                     <a 
                     href="https://github.com/lhpark114" 
-                    class="project"
                     target="blank"
                     data-type="JS"
                     >
                     <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                     <div class="project__description">
-                        <h3>Shopping List</h3>
+                        <h3 class="project__title">Shopping List</h3>
                         <p>Todo List </p>
                     </div>
                     </a>
                 </li>
                     
-                <li>
+                <li class="work__project">
                     <a 
                     href="https://github.com/lhpark114" 
-                    class="project"
                     target="blank"
                     data-type="JS"
                     >
                     <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                     <div class="project__description">
-                        <h3>Carrot Game</h3>
+                        <h3 class="project__title">Carrot Game</h3>
                         <p>Clone coding with HTML and CSS</p>
                     </div>
                     </a>
                 </li>
                     
-                <li>
+                <li class="work__project">
                     <a 
                     href="https://github.com/lhpark114" 
-                    class="project"
                     target="blank"
                     data-type="React"
                     >
                     <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                     <div class="project__description">
-                        <h3>Shopping Mall</h3>
+                        <h3 class="project__title">Shopping Mall</h3>
                         <p>Shopping Mall website</p>
                     </div>
                     </a>
                 </li>
                     
-                <li>
+                <li class="work__project">
                     <a 
                         href="https://github.com/lhpark114" 
-                        class="project"
                         target="blank"
                         data-type="React"
                         >
                         <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                         <div class="project__description">
-                            <h3>Travel prep Website</h3>
+                            <h3 class="project__title">Travel prep Website</h3>
                             <p>Website for traveling </p>
                         </div>
                     </a>
@@ -331,65 +327,62 @@
     </main>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="section">
-        <div class="section__container">
-            <h2 class="title">Testimonials</h2>
+    <section id="testimonials" class="section section__container">
+        <h2 class="title">Testimonials</h2>
             <p class="description">See what they say about me</p>
-            <ul>
-                <li class="testimonials">
-                    <img src="./imgs/people1.jpeg" alt="People" class="testimnials__avatar">
-                    <div>
+            <ul class="testimonials">
+                <li class="testimonial">
+                    <img src="./imgs/people1.jpeg" alt="People" class="testimonial__avatar">
+                    <div class="testimonial__bubble">
                         <p class="testimonial__speech-bubble">
                         I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.
                     </p>
-                    <p class="name"><a href="">Man1</a>/TigerSpike</p>
+                    <p class="name"><a href="" class="testimonial__bubble__name">Man1</a>/TigerSpike</p>
                     </div>
                     
                 </li>
-                <li class="testimonials">
-                    <img src="./imgs/people1.jpeg" alt="People" class="testimnials__avatar">
-                    <div>
+                <li class="testimonial">
+                    <img src="./imgs/people1.jpeg" alt="People" class="testimonial__avatar">
+                    <div class="testimonial__bubble">
                         <p class="testimonial__speech-bubble">
                         I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.
                     </p>
-                    <p class="name"><a href="">Man1</a>/TigerSpike</p>
+                    <p class="name"><a href="" class="testimonial__bubble__name">Man1</a>/TigerSpike</p>
                     </div>
                     
                 </li>
-                <li class="testimonials">
-                    <img src="./imgs/people1.jpeg" alt="People" class="testimnials__avatar">
-                    <div>
+                <li class="testimonial">
+                    <img src="./imgs/people1.jpeg" alt="People" class="testimonial__avatar">
+                    <div class="testimonial__bubble">
                         <p class="testimonial__speech-bubble">
                         I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. It's really great how easy your websites are to update and manage.
                     </p>
-                    <p class="name"><a href="">Man1</a>/TigerSpike</p>
+                    <p class="name"><a href="" class="testimonial__bubble__name">Man1</a>/TigerSpike</p>
                     </div>
                 </li>
             </ul>
-        </div>
     </section>    
 
 
     <!-- Footer -->
-    <footer>
-        <!-- Contact -->
-        <section id="contact" class="section">
+    <footer id="contact" class="section">
+        <div class="section-container">
             <h2 class="contact__title">Let&#39;s talk</h2>
             <p class="contact__email">hpark0114@gmail.com</p>
             <ul class="contact__links">
                 <li>
-                    <a href="https://github.com/lhpark114" title="my github link" target="_blank">
+                    <a class="contact__link" href="https://github.com/lhpark114" title="my github link" target="_blank">
                     <i class="fa-brands fa-github"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/stella-w-bb1a52146/" title="my linkedin link" target="_blank">
+                    <a class="contact__link" href="https://www.linkedin.com/in/stella-w-bb1a52146/" title="my linkedin link" target="_blank">
                     <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </li>
             </ul>
             <p class="contact__rights">2023 - All rights reserved</p>
-        </section>
+        </div>
     </footer>
 
     <!-- Arrow Up -->
