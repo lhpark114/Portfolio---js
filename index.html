@@ -37,12 +37,12 @@
 
   <body>
     <!-- Header -->
-    <header>
+    
     <!-- Navbar -->
-    <nav id="navbar">
-        <div class="navbar__logo">
-            <img class="navbar__logo__img" src="./imgs/favicon.png" alt="logo" />
-            <h1><a href="#">Strawberry</a></h1>
+    <header class="header">
+        <div class="header__logo">
+            <img class="header__logo__img" src="./imgs/favicon.png" alt="logo" />
+            <h1 lass="header__logo__title"><a href="#">Strawberry</a></h1>
         </div>
         <nav>
         <ul class="navbar__menu">
@@ -68,7 +68,6 @@
         <button class="navbar__toggle-btn">
             <i class="fa-solid fa-bars"></i>
         </button>
-    </nav>
     </header>
 
     <!-- Main -->
@@ -81,17 +80,17 @@
             src="./imgs/Profile.jpg"
             alt="Hyun-Ah's profile photo"
             class="home__avatar"/>
-            <h2 class="home__title">Hello, <br/>I&#39;m YumYum</h2>
+            <h2 class="home__title">Hello, <br/>I&#39;m <Strong class="home__title--strong">YumYum</Strong></h2>
             <p class="home__description">Fashion to Front End Developer</p>
-            <a href=#contact>CONTACT ME</a>
+            <a class="home__contact"href=#contact>CONTACT ME</a>
         </div>
     </Section>
 
 
     <!-- About Me -->
     <section id="about" class="section section__container">
-        <h2>About me</h2>
-        <p>I'm an applicant of Front End Developer.
+        <h2 class="title">About me</h2>
+        <p class="description">I'm an applicant of Front End Developer.
             I studied and worked in Fashion Industry, but what do I change my careers? <br>
             I like to make something and happy to get the results. <br>
             I realized that I like to learn new softwares and I'm a faster learner. I took a web designer course and I wanted to learn coding to make my own webpage. <br>
@@ -101,24 +100,19 @@
         </p>
        <ul class="about__majors">
             <li class="major">
-                <div class="major__icon">
-                    <i class="fa-brands fa-html5"></i>
-                </div>
+                <i class="fa-brands fa-html5 major__icon"></i>
                 <p class="major__title">Language</p>
                 <p class="major__description">HTML, CSS, JavaScript, React, <br/> TypeScript, Next.js, Web APIs</p>
             </li>
                 
             <li class="major">
-                <div class="major__icon">
-                    <i class="fa-solid fa-palette"></i>
-                </div>
+                <i class="fa-solid fa-palette major__icon"></i>
                 <p class="major__title">Web Design</p>
                 <p class="major__description">Sketch, Figma, Adobe XD, <br/> Adobe Photoshop, Adobe Illustrator, <br/> Adobe Indesign, Adobe Premiere Pro</p>
             </li>
 
             <li class="major">
-                <div class="major__icon">
-                    <i class="fa-brands fa-windows"></i>
+                    <i class="fa-brands fa-windows major__icon"></i>
                 </div>
                 <p class="major__title">Microsoft</p>
                 <p class="major__description">Excel, PowerPoint, Word</p>
@@ -167,16 +161,15 @@
 
     <!-- Skills -->
     <section id="skills" class="section">
-    <div class="section__container">
-        
-        <h2>Skills</h2>
-        <p>Skills & Attributes</p>
+        <div class="section-container">
+        <h2 class="title">Skills</h2>
+        <p class="description">Skills & Attributes</p>
         <p>
             Experience with all phases of the software life-cycle. Passion for learning new technologies.
             Capable of working within a team environment and independenly. Ability to plan and time schedule, work uner strict time pressure and adapt quickly when needed.
         </p>
         <div class="skillset">
-            <section class="skillset__left">
+            <section class="skillset__coding">
                 <h3 class="skillset__title">Skills</h3>
                 <ul> 
                     <li class="skill">
@@ -241,8 +234,7 @@
                 </ul>
             </section>
             
-            <div class="skillset__right">
-                <section class="tools">
+                <section class="skillset__tools">
                     <h3 class="skillset__title">Tools</h3>
                     <ul class="tools__list">
                         <li><span>Sublime Text with Plug-ings</span></li>
@@ -251,23 +243,21 @@
                         <li><span>Sketch App</span></li>
                     </ul>
                 </section>
-                <section class="etc">
+                <section class="skillset__etc">
                     <h3 class="skillset__title">Etc</h3>
                     <ul class="etc__list">
                         <li><span>Git</span></li>
                     </ul>
                 </section>
-            </div>
         </div>
-    </div>
     </section>
 
 
         <!-- Work -->
     <section id="work" class="section">
         <div class="section__container">
-            <h2>My work</h2>
-            <p>Projects</p>
+            <h2 class="title">My work</h2>
+            <p class="description">Projects</p>
             <ul class="work__categories">
                 <li><button class="category__btn selected" data-filter="*">All<span class="category__count">4</span></button></li>
                 <li><button class="category__btn" data-filter="JS">JavaScript<span class="category__count">2</span></button></li>
@@ -336,14 +326,15 @@
                 </li>
             </ul>
         </div>
+        </div>
     </section>
     </main>
 
     <!-- Testimonials -->
     <section id="testimonials" class="section">
         <div class="section__container">
-            <h2>Testimonials</h2>
-            <p>See what they say about me</p>
+            <h2 class="title">Testimonials</h2>
+            <p class="description">See what they say about me</p>
             <ul>
                 <li class="testimonials">
                     <img src="./imgs/people1.jpeg" alt="People" class="testimnials__avatar">
