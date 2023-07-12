@@ -54,6 +54,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Noto Sans', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -69,7 +72,7 @@ a{
 }
 ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 li {
@@ -77,15 +80,38 @@ li {
 }
 
 button {
-    border: 0;
     background-color: transparent;
     outline: 0;
+    border: 0;
     cursor: pointer;
     padding: 0;
 }
 button: focus {
-    outline: 1px solid var(--color-accent);
+    outline: 1px solid transparent;
 }
+
+/* Section common */
+.section {
+    padding: 4rem;
+    text-align: center;
+}
+
+.section__container {
+    max-width: var(--size-max-width);
+    margin: auto;
+}
+
+.title {
+    font-size: var(--font-medium);
+    margin: 1rem 0;    
+}
+
+.description {
+    font-size: var(--font-regular);
+    margin: 0.5rem 0;
+}
+
+
 /* Typography */
 h1 {
     font-size: var(--font-large);
@@ -115,7 +141,7 @@ p {
 
 /* Header */
 .header {
-    background-color: var(--color-dark-sea-green);
+    background-color: transparent;
     position: fixed;
     top: 0;
     width: 100%;
@@ -124,6 +150,12 @@ p {
     align-items: center;
     padding: 1rem;
     z-index: 1;
+    transition: all 300ms ease;
+}
+
+.header--dark {
+    background-color: var(--color-primary);
+    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
 }
 .header__logo {
     display: flex;
@@ -131,8 +163,6 @@ p {
     gap: 8px;
     font-size: var(--font-regular);
     font-weight: var(--weight-regular);
-    
-    margin: 16px 0 16px 0;
 }
 .header__logo__img{
     width: 36px;
@@ -142,58 +172,48 @@ p {
     font-size: 1.8rem;
 }
 
-
-/* #navbar {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    transition: all var(--animation-duration) ease-in-out;
-    z-index: 1;
+.header__nav {
+    padding: 8px 16px;
 }
 
-#navbar.navbar--dark {
-    background-color: var(--color-dark-sea-green);
-    padding: 8px;
-} */
+.header__toggle{
+    display: none;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--color-white);
+}
 
-.navbar__menu {
+.header__menu {
     display: flex;
     gap: 4px;
     color: var(--color-light-white);
 }
 
-.navbar__menu__item {
+.header__menu__item {
+    display: block;
     padding: 8px 16px;
-    margin: 0;
     cursor: pointer;
     border-radius; var(--size-border-radius);
     border: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 
-.navbar__menu__item:hover {
+.header__menu__item:hover {
     border-bottom: 1px solid var(--color-light-white);
     border: 1px solid var(--color-light-white);
     background-color: var(--color-lemon-grass);
 }
 
-.navbar__menu__item.active {
+.header__menu__item.active {
     border: 1px solid var(--color-accent);
     border-radius: 4px;
     background-color: var(--color-lemon-grass);
 }
 
-.navbar__toggle-btn{
-    position: absolute;
-    top: 24px;
-    right: 32px;
-    font-size: 24px;
-    color: var(--color-white);
-    display: none;
-}
+
 
 /* Home */
 #home {
@@ -201,7 +221,6 @@ p {
     padding: 5rem 1rem;
     padding-top: 7rem;
     text-align: center;
-    margin: auto;
 }
 .home__avatar {
     width: 250px;
@@ -243,27 +262,7 @@ p {
     outline: 2px solid var(--color-accent);
 }
 
-/* Section common */
-.section {
-    padding: 50px;
-    text-align: center;
-    margin: auto;
-}
 
-.section__container {
-    max-width: var(--size-max-width);
-    margin: auto;
-}
-
-.title {
-    font-size: var(--font-medium);
-    margin: 1rem 0;    
-}
-
-.description {
-    font-size: var(--font-regular);
-    margin: 0.5rem 0;
-}
 
 
 /* About me */
@@ -422,7 +421,7 @@ p {
 }
 
 /* Work */
-.work__categories {
+.categories {
     display: flex;
     justify-contact: center;
     margin: 2.5rem;
@@ -462,20 +461,20 @@ p {
     transition: all var(--animation-duration) ease-in;
 }
 
-.work__projects {
+.projects {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1,1fr);
     gap: 1rem;
     transition: all var(--animation-duration) ease-out;
 }
-.work__projects.animation {
+.projects.animation {
     opacity: 0;
-    transform: scale(0.95) translateY(40px);
+    transform: scale(0.95) translateY(20px);
 
 }
 
-.work__project {
+.project {
     position: relative;
     display: flex;
     justify-content: center;
@@ -614,15 +613,11 @@ p {
     color: var(--color-white);
     border-radius: 100%;
     text-align: center;
-    opacity: 0;
     pointer-events: none;
     transition: opacity 300ms ease-in;
     box-shadow: 5px 5px 0px 0px var(--color-accent);
 }
-.page-up.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
+
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
@@ -636,7 +631,7 @@ p {
     }
 
     .section {
-        padding: 3rem 2rem;
+        padding: 4rem 2rem;
     }
 
     .title {
@@ -649,6 +644,20 @@ p {
     .header {
         flex-direction: column;
         align-items: start;
+        background-color: var(--color-primary);
+    }
+    .header__toggle{
+        display: block;
+        top: 16px;
+        right: 16px;
+        font-size: var(--font-medium);
+    }
+    .header__menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 4rem;
+
     }
     #home {
         padding-bottom: 3rem;
@@ -659,31 +668,28 @@ p {
         margin-bottom: 0.5rem;
     }
 
-    .navbar__toggle-btn{
-        display: block;
-        top: 16px;
-        right: 16px;
-        font-size: var(--font-medium);
-    }
-    #navbar {
+
+    #header {
         flex-direction: column;
         align-items: flex-start;
         background-color: var(--color-dark-sea-green);
     }
 
-    #navbar.navbar--dark {
+    #header.header--dark {
         padding: 0;
     }
     .header__nav {
         width: 100%;
     }
-    .navbar__menu {
+    .header__menu {
+        display: none;
         flex-direction: column;
         text-align: center;
         padding: 1rem 4rem;
         gap: 1rem;
     }
-    .navbar__menu.open {
+    .header__menu.open {
+        display: 1px;
         padding: 16px;
     }
     .section {
@@ -710,7 +716,7 @@ p {
         flex-direction: column;
         grid-template-columns: 1fr;
     }
-    .work__categories {
+    .categories {
         flex-direction: column;
     }
     .category__btn {
@@ -720,7 +726,7 @@ p {
     .project {
         flex-grow: 1;
     }
-    .work__projects {
+    .projects {
         grid-template-columns: repeat(2,1fr);
     }
     .testimonial {

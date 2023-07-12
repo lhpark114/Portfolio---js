@@ -1,22 +1,22 @@
 'use strict';
 
-// Make navbar transparent when it is on the top
-const navbar = document.querySelector('#navbar');
-const navbarHeight = navbar.getBoundingClientRect().height;
+// Make header transparent when it is on the top
+const header = document.querySelector('.header');
+const headerHeight = header.offsetHeight;
 
-window.addEventListener('scroll', function() {
-      if (window.scrollY > navbarHeight) {
-        navbar.classList.add('navbar--dark');
-        // add padding top to show content behind navbar
+document.addEventListener('scroll', function() {
+      if (window.scrollY > headerHeight) {
+        header.classList.add('header--dark');
+        // add padding top to show content behind header
       } else {
-        navbar.classList.remove('navbar--dark');
+        header.classList.remove('header--dark');
          // remove padding top from body
       } 
   });
 
 
-// Handle scrolling when tapping on the navbar menu
-const navbarMenu = document.querySelector('.navbar__menu');
+// Handle scrolling when tapping on the header menu
+const navbarMenu = document.querySelector('.header__menu');
 navbarMenu.addEventListener('click', (event) =>{
     const target = event.target;
     const scroll = target.dataset.scroll;
@@ -31,10 +31,11 @@ navbarMenu.addEventListener('click', (event) =>{
 
 
 // Active Toggle Button
-const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+const navbarToggleBtn = document.querySelector('.header__toggle');
 navbarToggleBtn.addEventListener('click', () => {
     navbarMenu.classList.toggle('open');
 })
+
 
 // 'Contact Me' : Click and to the Contact section
 const contactMeBtn = document.querySelector('.home__contact');
@@ -47,13 +48,13 @@ contactMeBtn.addEventListener('click', () => {
 // Scrolling to Top Page
 // 1) showing Arrow when scrolling down
 const home = document.querySelector('.home__container');
-const homeHeight = home.getBoundingClientRect().height;
+const homeHeight = home.offsetHeight;
 const pageUp = document.querySelector('.page-up');
 document.addEventListener('scroll', ()=>{
     if(window.scrollY > homeHeight / 2) {
-        pageUp.classList.add('visible');
+        pageUp.style.opacity = 1;
     } else {
-        pageUp.classList.remove('visible');
+        pageUp.style.opacity = 0;
     }
 });
 
@@ -69,53 +70,7 @@ document.addEventListener('scroll', () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
-// Filtering
-const workCategories = document.querySelector('.work__categories');
-const workProjects = document.querySelector('.work__projects');
-const projects = document.querySelectorAll('.project');
 
-workCategories.addEventListener('click', (e) => {
-    e.preventDefault()
-    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-        if (filter == null) {
-            return;        // when 'undefined', just return
-        } 
-        
-            // Remove Selection from the previous item and select the next one
-            const active = document.querySelector('.category__btn.selected');
-            active.classList.remove('selected');
-            const target = 
-                e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
-            target.classList.add('selected');
-
-            workProjects.classList.add('animation');
-                
-            setTimeout(() => {
-                projects.forEach((project) => {
-                 if(filter === '*' || filter === project.dataset.type) {
-                    project.classList.remove('invisible');
-                 } else {
-                    project.classList.add('invisible');
-                 }
-            });
-                 workProjects.classList.remove('animation');
-        },300)
-    });
-
-
-const sectionIds = [
-  '#home', '#about', '#skills', '#work', '#testimonials', '#contact',
-];
-const sections = sectionIds.map(id => document.querySelector(id));
-const navItems = sectionIds.map(id => document.querySelector(`[data-scroll="${id}"`));
-
-let selectedNavIndex = 0;
-let selectedNavItem = navItems[0];
-function selectedNavItem(selected) {
-  selectedNavItem.classList.remove('active');
-  selectedNavItem = selected;
-  selectedNavItem.classList.add('active');
-}
 
 function scrollIntoView(selector) {
     const scrollToPage = document.querySelector(selector);

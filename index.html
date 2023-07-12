@@ -32,40 +32,31 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css"/>
     <!-- Javascript -->
-    <script src="src/main.js" defer></script>
+    <script type="module" src="src/main.js" defer></script>
+    <script type="module" src="src/projects.js" defer></script>
+    <script type="module" src="src/active_menu.js" defer></script>
   </head>
 
   <body>
     <!-- Header -->
-    
-    <!-- Navbar -->
     <header class="header">
         <div class="header__logo">
             <img class="header__logo__img" src="./imgs/favicon.png" alt="logo" />
             <h1 lass="header__logo__title"><a href="#">Strawberry</a></h1>
         </div>
         <nav class="header__nav">
-        <ul class="navbar__menu">
-            <li class="navbar__menu__item active" data-scroll="#home">Home</li>
-            <li class="navbar__menu__item" data-scroll="#about">About</li>
-            <li class="navbar__menu__item" data-scroll="#skills">Skills</li>
-            <li class="navbar__menu__item" data-scroll="#work">My work</li>
-            <li class="navbar__menu__item" data-scroll="#testimonials">Testimonial</li>
-            <li class="navbar__menu__item" data-scroll="#contact">Contact</li>
-        </ul>
-
-        <!-- <ul class="navbar__menu">
-            <li <a href="#home">Home</a></li>
-            <li <a href="#about">About</a><</li>
-            <li <a href="#skills">Skills</a><</li>
-            <li <a href="#work">My work</a><</li>
-            <li <a href="#testimonials">Testimonial</a><</li>
-            <li <a href="#contact">Contact</a><</li>
-        </ul> -->
+            <ul class="header__menu">
+                <li> <a class="header__menu__item active" href="#home">Home</a></li>
+                <li> <a class="header__menu__item" href="#about">About</a></li>
+                <li> <a class="header__menu__item" href="#skills">Skills</a></li>
+                <li> <a class="header__menu__item" href="#work">My work</a></li>
+                <li> <a class="header__menu__item" href="#testimonials">Testimonial</a></li>
+                <li> <a class="header__menu__item" href="#contact">Contact</a></li>
+            </ul>
         </nav>
         
         <!-- Toggle Button -->
-        <button class="navbar__toggle-btn">
+        <button class="header__toggle" aria-label="navigation menu toggle">
             <i class="fa-solid fa-bars"></i>
         </button>
     </header>
@@ -253,23 +244,22 @@
     </section>
 
 
-        <!-- Work -->
+    <!-- Work -->
     <section id="work" class="section">
         <div class="section__container">
             <h2 class="title">My work</h2>
             <p class="description">Projects</p>
-            <ul class="work__categories">
+            <ul class="categories">
                 <li><button class="category__btn--selected" data-filter="*">All<span class="category__count">4</span></button></li>
                 <li><button class="category__btn" data-filter="JS">JavaScript<span class="category__count">2</span></button></li>
                 <li><button class="category__btn" data-filter="React">React<span class="category__count">2</span></button></li>
             </ul>
 
-            <ul class="work__projects">
-                <li class="work__project">
+            <ul class="projects">
+                <li class="project" data-type="JS">
                     <a 
                     href="https://github.com/lhpark114" 
                     target="blank"
-                    data-type="JS"
                     >
                     <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                     <div class="project__description">
@@ -279,11 +269,10 @@
                     </a>
                 </li>
                     
-                <li class="work__project">
+                <li class="project" data-type="JS">
                     <a 
                     href="https://github.com/lhpark114" 
                     target="blank"
-                    data-type="JS"
                     >
                     <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                     <div class="project__description">
@@ -293,11 +282,10 @@
                     </a>
                 </li>
                     
-                <li class="work__project">
+                <li class="project" data-type="React">
                     <a 
                     href="https://github.com/lhpark114" 
                     target="blank"
-                    data-type="React"
                     >
                     <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                     <div class="project__description">
@@ -307,11 +295,10 @@
                     </a>
                 </li>
                     
-                <li class="work__project">
+                <li class="project" data-type="React">
                     <a 
                         href="https://github.com/lhpark114" 
                         target="blank"
-                        data-type="React"
                         >
                         <img src="./imgs/projects/macbook_img.png" alt="Youtube" class="project__img"/>
                         <div class="project__description">
